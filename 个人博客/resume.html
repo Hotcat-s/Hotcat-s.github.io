@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 - 我的个人博客</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 简历页面专用样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+        
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resume-header {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .resume-title {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .resume-title h1 {
+            color: var(--text-primary);
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .resume-title i {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+        
+        .resume-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .resume-viewer {
+            flex: 1;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            min-height: 800px;
+        }
+        
+        .resume-viewer embed,
+        .resume-viewer iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 800px;
+            border: none;
+        }
+        
+        .back-btn {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 10px 16px;
+            border-radius: var(--radius-md);
+            transition: var(--transition-normal);
+            font-weight: 500;
+        }
+        
+        .back-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .download-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: 10px 16px;
+            border-radius: var(--radius-md);
+            transition: var(--transition-normal);
+            font-weight: 500;
+        }
+        
+        .download-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: var(--spacing-sm);
+            }
+            
+            .resume-header {
+                flex-direction: column;
+                gap: var(--spacing-md);
+                text-align: center;
+            }
+            
+            .resume-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .resume-viewer {
+                min-height: 600px;
+            }
+            
+            .resume-viewer embed,
+            .resume-viewer iframe {
+                min-height: 600px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .resume-actions {
+                flex-direction: column;
+            }
+            
+            .back-btn,
+            .download-btn {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- 简历头部 -->
+        <header class="resume-header">
+            <div class="resume-title">
+                <i class="fas fa-file-pdf"></i>
+                <h1>我的个人简历</h1>
+            </div>
+            <div class="resume-actions">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> 返回首页
+                </a>
+                <a href="assets/resume/resume.pdf" class="download-btn" download>
+                    <i class="fas fa-download"></i> 下载PDF
+                </a>
+            </div>
+        </header>
+
+        <!-- 简历查看器 -->
+        <div class="resume-viewer">
+            <embed src="assets/resume/resume.pdf" type="application/pdf" width="100%" height="100%">
+                <p>您的浏览器不支持PDF预览。请 <a href="assets/resume/resume.pdf" target="_blank">点击这里下载PDF文件</a>。</p>
+            </embed>
+        </div>
+    </div>
+
+    <script>
+        // 检查PDF是否加载成功
+        window.addEventListener('load', function() {
+            const embed = document.querySelector('embed');
+            if (embed) {
+                embed.addEventListener('error', function() {
+                    // 如果PDF加载失败，显示备用内容
+                    const viewer = document.querySelector('.resume-viewer');
+                    viewer.innerHTML = `
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 2rem; text-align: center;">
+                            <i class="fas fa-file-pdf" style="font-size: 4rem; color: #dc3545; margin-bottom: 1rem;"></i>
+                            <h3 style="color: #333; margin-bottom: 1rem;">PDF预览不可用</h3>
+                            <p style="color: #666; margin-bottom: 2rem;">您的浏览器可能不支持PDF预览，请直接下载查看。</p>
+                            <a href="assets/resume/resume.pdf" class="download-btn" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> 在新窗口中打开PDF
+                            </a>
+                        </div>
+                    `;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
