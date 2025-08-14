@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>命令行环境：PowerShell、Git Bash 和 Command Prompt 的区别 - 我的个人博客</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .table-container {
+            overflow-x: auto; /* Add horizontal scroll */
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2>我的博客</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">关于我</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../projects.html" class="nav-link">项目展示</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link active">技术分享</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">联系方式</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章内容 -->
+    <article class="blog-detail">
+        <div class="container">
+            <!-- 返回按钮 -->
+            <div class="back-button">
+                <a href="../blog.html" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i> 返回技术分享
+                </a>
+            </div>
+
+            <!-- 文章头部 -->
+            <header class="article-header">
+                <div class="article-category">技术分享</div>
+                <h1>命令行环境：PowerShell、Git Bash 和 Command Prompt 的区别</h1>
+                <div class="article-meta">
+                    <span class="article-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        2024年1月16日
+                    </span>
+                    <span class="article-reading-time">
+                        <i class="fas fa-clock"></i>
+                        10 分钟阅读
+                    </span>
+                    <span class="article-views">
+                        <i class="fas fa-eye"></i>
+                        520 次阅读
+                    </span>
+                </div>
+                <div class="article-tags">
+                    <span class="article-tag">命令行</span>
+                    <span class="article-tag">PowerShell</span>
+                    <span class="article-tag">Git Bash</span>
+                    <span class="article-tag">Command Prompt</span>
+                </div>
+            </header>
+
+            <!-- 文章封面 -->
+            <div class="article-cover">
+                <img src="../assets/images/blog2.jpg" alt="命令行环境：PowerShell、Git Bash 和 Command Prompt 的区别">
+            </div>
+
+            <!-- 文章内容 -->
+            <div class="article-content">
+                <h2>命令行环境：PowerShell、Git Bash 和 Command Prompt 的区别</h2>
+
+                <p>让我们来详细解释一下 PowerShell、Git Bash 和 Command Prompt (cmd.exe) 这三种命令行环境的区别和不同之处：</p>
+
+                <h3>1. Command Prompt (cmd.exe):</h3>
+
+                <ul>
+                    <li><strong>定位：</strong> Windows 操作系统自带的传统命令行解释器。</li>
+                    <li><strong>基础：</strong> 基于 DOS 时代的命令，使用一套相对较老的命令集，例如 <code>dir</code> (列出目录内容), <code>cd</code> (改变目录), <code>mkdir</code> (创建目录), <code>copy</code> (复制文件) 等。</li>
+                    <li><strong>功能：</strong> 主要用于执行基本的系统管理任务、运行批处理脚本 (.bat 文件)，以及执行一些简单的程序。</li>
+                    <li><strong>局限性：</strong>
+                        <ul>
+                            <li>功能相对有限，缺乏高级特性，例如强大的管道 (pipeline) 处理能力、高级脚本编写能力等。</li>
+                            <li>对 Unix/Linux 命令的支持很弱，需要额外的工具才能模拟某些 Unix 命令。</li>
+                            <li>在处理复杂任务和脚本时，效率较低，代码可读性较差。</li>
+                        </ul>
+                    </li>
+                    <li><strong>使用场景：</strong> 运行一些遗留的批处理脚本、执行简单的系统命令、启动程序等。  现在已经逐渐被 PowerShell 取代。</li>
+                </ul>
+
+                <h3>2. PowerShell:</h3>
+
+                <ul>
+                    <li><strong>定位：</strong> Windows 操作系统上更现代、更强大的命令行 shell 和脚本语言。</li>
+                    <li><strong>基础：</strong> 基于 .NET Framework (或 .NET Core/ .NET) 平台，使用一种面向对象的命令集 (cmdlets)，例如 <code>Get-ChildItem</code> (列出目录内容), <code>Set-Location</code> (改变目录), <code>New-Item</code> (创建目录/文件), <code>Copy-Item</code> (复制文件) 等。</li>
+                    <li><strong>功能：</strong>
+                        <ul>
+                            <li>提供了强大的管道 (pipeline) 处理能力，可以将一个命令的输出作为另一个命令的输入，进行链式处理。</li>
+                            <li>支持高级脚本编写，可以使用变量、循环、条件判断等结构，编写复杂的脚本来自动化系统管理任务。</li>
+                            <li>可以访问 .NET Framework/.NET 的各种类和方法，进行更高级的操作。</li>
+                            <li>具有强大的远程管理能力，可以远程管理 Windows 服务器。</li>
+                        </ul>
+                    </li>
+                    <li><strong>优点：</strong>
+                        <ul>
+                            <li>功能强大，灵活性高，可以完成复杂的系统管理任务。</li>
+                            <li>易于学习，cmdlet 命令的命名规范清晰，易于理解。</li>
+                            <li>支持多种数据格式，例如 XML、JSON、CSV 等，方便处理各种数据。</li>
+                        </ul>
+                    </li>
+                    <li><strong>使用场景：</strong> 系统管理、自动化脚本编写、配置管理、远程管理、开发和测试等。</li>
+                </ul>
+
+                <h3>3. Git Bash:</h3>
+
+                <ul>
+                    <li><strong>定位：</strong> 模拟 Unix/Linux 环境的命令行 shell，主要为 Git 版本控制系统提供命令行界面。</li>
+                    <li><strong>基础：</strong> 基于 MinGW (Minimalist GNU for Windows) 或 MSYS2，提供了一套 Unix/Linux 风格的命令和工具，例如 <code>ls</code> (列出目录内容), <code>cd</code> (改变目录), <code>mkdir</code> (创建目录), <code>cp</code> (复制文件), <code>rm</code> (删除文件), <code>grep</code> (文本搜索), <code>sed</code> (文本替换), <code>awk</code> (文本处理) 等。</li>
+                    <li><strong>功能：</strong>
+                        <ul>
+                            <li>提供了常用的 Unix/Linux 命令，方便在 Windows 上进行开发和管理。</li>
+                            <li>集成了 Git 版本控制系统，可以方便地进行代码版本管理。</li>
+                            <li>支持 Bash 脚本，可以使用 Bash 脚本来自动化任务。</li>
+                        </ul>
+                    </li>
+                    <li><strong>优点：</strong>
+                        <ul>
+                            <li>方便在 Windows 上使用 Unix/Linux 命令。</li>
+                            <li>集成 Git，方便进行代码版本管理。</li>
+                        </ul>
+                    </li>
+                    <li><strong>使用场景：</strong>  Git 版本控制、执行 Unix/Linux 命令、运行 Bash 脚本、进行 Web 开发等。 对于需要在 Windows 上进行跨平台开发的用户来说，Git Bash 是一个非常有用的工具。</li>
+                </ul>
+
+                <h3>总结对比表格:</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性</th>
+                                <th>Command Prompt (cmd.exe)</th>
+                                <th>PowerShell</th>
+                                <th>Git Bash</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>核心</strong></td>
+                                <td>Windows 命令解释器</td>
+                                <td>基于 .NET Framework/.NET</td>
+                                <td>MinGW/MSYS2 (Unix 模拟环境)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>命令风格</strong></td>
+                                <td>DOS 风格</td>
+                                <td>Cmdlet (动词-名词)</td>
+                                <td>Unix/Linux 风格</td>
+                            </tr>
+                            <tr>
+                                <td><strong>功能</strong></td>
+                                <td>基本系统命令</td>
+                                <td>强大系统管理、自动化</td>
+                                <td>Unix/Linux 工具、Git 版本控制</td>
+                            </tr>
+                            <tr>
+                                <td><strong>管道 (Pipeline)</strong></td>
+                                <td>有限</td>
+                                <td>强大，面向对象</td>
+                                <td>支持 (文本流)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>脚本语言</strong></td>
+                                <td>批处理 (.bat)</td>
+                                <td>PowerShell 脚本 (.ps1)</td>
+                                <td>Bash 脚本 (.sh)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>跨平台</strong></td>
+                                <td>Windows</td>
+                                <td>跨平台 (但最佳体验在 Windows)</td>
+                                <td>跨平台</td>
+                            </tr>
+                            <tr>
+                                <td><strong>面向对象</strong></td>
+                                <td>否</td>
+                                <td>是</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td><strong>主要用途</strong></td>
+                                <td>兼容旧脚本，简单命令</td>
+                                <td>系统管理，自动化，配置</td>
+                                <td>Git 版本控制，类 Unix 环境</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>选择哪个？</h3>
+
+                <ul>
+                    <li><strong>如果你只需要执行简单的 Windows 命令，并且不需要编写复杂的脚本，那么 Command Prompt 也许就够了。</strong>  但现在已经很少有理由继续使用 Command Prompt 了。</li>
+                    <li><strong>如果你需要进行系统管理、自动化任务、远程管理、或者需要编写更复杂的脚本，那么 PowerShell 是更好的选择。</strong>  它是 Windows 环境下最强大的命令行工具。</li>
+                    <li><strong>如果你需要在 Windows 上使用 Unix/Linux 命令，或者需要进行 Git 版本控制，那么 Git Bash 是一个不错的选择。</strong>  尤其是在 Web 开发领域，Git Bash 非常常用。</li>
+                </ul>
+
+                <p>总的来说，PowerShell 是 Windows 环境下功能最全面的命令行工具，而 Git Bash 则提供了在 Windows 上使用 Unix/Linux 命令的便利。 理解它们的区别和特点，可以帮助你更好地选择合适的命令行环境，提高工作效率。</p>
+            </div>
+
+            <!-- 文章底部 -->
+            <footer class="article-footer">
+                <div class="article-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-heart"></i> 点赞 (42)
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-share"></i> 分享
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-bookmark"></i> 收藏
+                    </button>
+                </div>
+
+                <div class="article-navigation">
+                    <a href="#" class="nav-prev">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>上一篇：使用 React Hooks 进行状态管理</span>
+                    </a>
+                    <a href="#" class="nav-next">
+                        <span>下一篇：提升 Web 应用性能的 10 个技巧</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </article>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 我的个人博客. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
