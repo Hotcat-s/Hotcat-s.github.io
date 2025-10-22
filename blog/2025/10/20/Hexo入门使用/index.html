@@ -199,7 +199,7 @@
 
 <p>创建成功后，编辑博客目录下 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性。</p>
 <p>修改后的文件示例如下:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-02-23 19:20:33</span><br><span class="line">layout: about</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里写关于页的正文，支持 Markdown, HTML</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">        ---</span><br><span class="line">        title: about</span><br><span class="line">        date: 2020-02-23 19:20:33</span><br><span class="line">        layout: about</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">        这里写关于页的正文，支持 Markdown, HTML</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>本地启动:</p>
 </li>
@@ -276,8 +276,10 @@
 <p><strong>八、添加评论功能</strong></p>
 <ul>
 <li>打开主题目录 <code>themes\fluid</code>下的 <code>_config.yml</code> 文件，修改配置。<ul>
-<li>启用评论插件</li>
+<li>启用评论插件<ul>
 <li>配置 <code>LeanCloud </code>的 <code>appId </code>和 <code>appkey</code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -312,7 +314,7 @@
 <li><p>将<code>public</code> 目录下的文件复制到服务器上的某个目录下</p>
 </li>
 <li><p>修改 <code>Nginx</code> 配置文件，在 <code>server</code> 节点下添加如下配置</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> /blog &#123;</span><br><span class="line">    <span class="attribute">alias</span> /opt/rkyao/fronted/hexo-blog;</span><br><span class="line">    <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> /blog &#123;</span><br><span class="line"><span class="attribute">alias</span> /opt/rkyao/fronted/hexo-blog;</span><br><span class="line"><span class="attribute">index</span> index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重启 Nginx</p>
 </li>
