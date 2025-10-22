@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实验结果记录 - 技术分享</title>
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 导航栏 -->
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="../../../../"><h2>我的博客</h2></a>
+        </div>
+        <ul class="nav-menu">
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html" class="nav-link ">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#about" class="nav-link ">
+                        关于我
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="nav-link ">
+                        项目展示
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="nav-link ">
+                        技术分享
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#contact" class="nav-link ">
+                        联系方式
+                    </a>
+                </li>
+            
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+
+    
+    <main>
+        <!-- 文章内容 -->
+
+<article class="blog-detail">
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button">
+            <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> 返回技术分享
+            </a>
+        </div>
+
+        <!-- 文章目录 -->
+        <aside class="article-toc" id="article-toc">
+            <div class="toc-header">
+                <i class="fas fa-list"></i>
+                <span>目录</span>
+            </div>
+            <nav class="toc-content" id="toc-content">
+                <!-- 目录将通过 JavaScript 动态生成 -->
+            </nav>
+        </aside>
+
+        <!-- 文章头部 -->
+        <header class="article-header">
+            <h1>实验结果记录</h1>
+            <div class="article-meta">
+                <span class="article-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    2025年10月21日
+                </span>
+                <span class="article-reading-time">
+                    <i class="fas fa-clock"></i>
+                    
+                    7分钟阅读
+                </span>
+                <span class="article-views">
+                    <i class="fas fa-eye"></i>
+                    0 次阅读
+                </span>
+            </div>
+            
+                <div class="article-tags">
+                    
+                        <span class="article-tag">实验</span>
+                    
+                        <span class="article-tag">深度学习</span>
+                    
+                </div>
+            
+        </header>
+
+        <!-- 文章内容 -->
+        <div class="article-content">
+            <h3 id="跑GID-15数据集的时候注意split"><a href="#跑GID-15数据集的时候注意split" class="headerlink" title="跑GID-15数据集的时候注意split"></a>跑GID-15数据集的时候注意split</h3><h3 id="ALLSPARK—T121（感觉太低了，暂时不跑了-）"><a href="#ALLSPARK—T121（感觉太低了，暂时不跑了-）" class="headerlink" title="ALLSPARK—T121（感觉太低了，暂时不跑了~~~~）"></a>ALLSPARK—T121（感觉太低了，暂时不跑了~~~~）</h3><h5 id="UAVid"><a href="#UAVid" class="headerlink" title="UAVid"></a>UAVid</h5><p>sh scripts&#x2F;SEC_RS_UAVid.sh 1 23456</p>
+<ul>
+<li>1-100</li>
+<li>1-20 还在跑  Previous best: 22.17（太低了）</li>
+<li>1-10</li>
+<li>1-5 试试这个</li>
+</ul>
+<h5 id="GID-15"><a href="#GID-15" class="headerlink" title="GID-15"></a>GID-15</h5><p>sh scripts&#x2F;SEC_RS_gid15.sh 1 23456</p>
+<ul>
+<li>1-100</li>
+<li>1-20</li>
+<li>1-10</li>
+<li>1-5</li>
+</ul>
+<h3 id="Fixmatch—T121"><a href="#Fixmatch—T121" class="headerlink" title="Fixmatch—T121"></a>Fixmatch—T121</h3><h5 id="UAVid-1"><a href="#UAVid-1" class="headerlink" title="UAVid"></a>UAVid</h5><p>sh scripts&#x2F;SEC_RS_UAVid.sh 1 23456</p>
+<ul>
+<li>1-100</li>
+<li>1-20  Previous best: 61.44</li>
+<li>1-10 Previous best: 63.35</li>
+<li>1-5 Previous best: 64.27</li>
+</ul>
+<h5 id="GID-15-1"><a href="#GID-15-1" class="headerlink" title="GID-15"></a>GID-15</h5><p>sh scripts&#x2F;SEC_RS_gid15.sh 1 23456</p>
+<ul>
+<li>1-100</li>
+<li>1-20 Previous best: 66.66</li>
+<li>1-10 Previous best: 68.98</li>
+<li>1-5 Previous best: 73.71</li>
+</ul>
+<h3 id="WSCL—Xiahao-4022"><a href="#WSCL—Xiahao-4022" class="headerlink" title="WSCL—Xiahao_4022"></a>WSCL—Xiahao_4022</h3><p>CUDA_VISIBLE_DEVICES&#x3D;0 python orig_train.py</p>
+<h5 id="UAVid-2"><a href="#UAVid-2" class="headerlink" title="UAVid"></a>UAVid</h5><ul>
+<li>1-100  previous best &#x3D; 50.69</li>
+<li>1-20  previous best &#x3D; 61.05</li>
+<li>1-10  previous best &#x3D; 62.93</li>
+<li>1-5 previous best &#x3D; 64.66</li>
+</ul>
+<h5 id="GID-15-2"><a href="#GID-15-2" class="headerlink" title="GID-15"></a>GID-15</h5><ul>
+<li>1%  previous best &#x3D; 41.78（2023112014）</li>
+<li>1-20  previous best &#x3D; 65.97（2023112014）</li>
+<li>1-10  训练了63epoch previous best &#x3D; 70.49<br>二次训练 previous best &#x3D; 70.09</li>
+<li>1-5 previous best &#x3D; 74.86</li>
+</ul>
+<h3 id="DWL—Wuyuhao-2013"><a href="#DWL—Wuyuhao-2013" class="headerlink" title="DWL—Wuyuhao_2013"></a>DWL—Wuyuhao_2013</h3><h5 id="UAVid-3"><a href="#UAVid-3" class="headerlink" title="UAVid"></a>UAVid</h5><p>python3 train.py –gpu 0 –model SegFormer –method DWL –percent 1-5 –dataset UAVid –num-classes 8 –ignore-index 255 –num-epochs 100</p>
+<p>日志记录要优化，添加best_miou，没有第几个epoch选项</p>
+<ul>
+<li>1-100</li>
+<li>1-20  mIoU: 57.35</li>
+<li>1-10 mIoU: 61.07(跑了88epoch)</li>
+<li>1-5 mIoU: 62.34</li>
+</ul>
+<p>python3 train.py –gpu 0 –model SegFormer –method DWL –percent 1-5 –dataset GID15 –num-classes 15 –ignore-index 255 –num-epochs 100</p>
+<h5 id="GID-15-3"><a href="#GID-15-3" class="headerlink" title="GID-15"></a>GID-15</h5><ul>
+<li>1-100</li>
+<li>1-20 mIoU: 65.07</li>
+<li>1-10 mIoU: 69.09</li>
+<li>1-5 mIoU: 75.15</li>
+</ul>
+<h3 id="Unimatch—2023112014"><a href="#Unimatch—2023112014" class="headerlink" title="Unimatch—2023112014"></a>Unimatch—2023112014</h3><p>日志记录要优化,</p>
+<h5 id="UAVid-4"><a href="#UAVid-4" class="headerlink" title="UAVid"></a>UAVid</h5><p>sh scripts&#x2F;SEC_RS_UAVid.sh 1 23456</p>
+<ul>
+<li>1-100</li>
+<li>1-20 Previous best: 62.55</li>
+<li>1-10 Previous best: 64.27</li>
+<li>1-5 Previous best: 65.42</li>
+</ul>
+<h5 id="GID-15-4"><a href="#GID-15-4" class="headerlink" title="GID-15"></a>GID-15</h5><p>sh scripts&#x2F;SEC_RS_gid15.sh 1 23456</p>
+<ul>
+<li>1-100</li>
+<li>1-20 Previous best: 65.79</li>
+<li>1-10 Previous best: 70.97</li>
+<li>1-5 Previous best: 76.48</li>
+</ul>
+<h3 id="LSST—Xiahao-4022"><a href="#LSST—Xiahao-4022" class="headerlink" title="LSST—Xiahao_4022"></a>LSST—Xiahao_4022</h3><h5 id="UAVid-5"><a href="#UAVid-5" class="headerlink" title="UAVid"></a>UAVid</h5><p>CUDA_VISIBLE_DEVICES&#x3D;0 python train.py</p>
+<ul>
+<li>1-100</li>
+<li>1-20 previous best &#x3D; 51.25</li>
+<li>1-10 previous best &#x3D; 56.53</li>
+<li>1-5 previous best &#x3D; 59.14</li>
+</ul>
+<h5 id="GID-15-5"><a href="#GID-15-5" class="headerlink" title="GID-15"></a>GID-15</h5><p>CUDA_VISIBLE_DEVICES&#x3D;0 python train.py</p>
+<ul>
+<li>1-100</li>
+<li>1-20 previous best &#x3D; 65.94</li>
+<li>1-10 previous best &#x3D; 69.87</li>
+<li>1-5 previous best &#x3D; 75.49</li>
+</ul>
+<h3 id="CPS—Wuyuhao-2013"><a href="#CPS—Wuyuhao-2013" class="headerlink" title="CPS—Wuyuhao_2013"></a>CPS—Wuyuhao_2013</h3><h3 id="Corrmatch—2023112014"><a href="#Corrmatch—2023112014" class="headerlink" title="Corrmatch—2023112014"></a>Corrmatch—2023112014</h3><h5 id="UAVid-6"><a href="#UAVid-6" class="headerlink" title="UAVid"></a>UAVid</h5><p>sh tools&#x2F;train_UAVid.sh 1 23456</p>
+<ul>
+<li>1-100</li>
+<li>1-20 Previous best: 63.11</li>
+<li>1-10 wait</li>
+<li>1-5</li>
+</ul>
+<h5 id="GID-15-6"><a href="#GID-15-6" class="headerlink" title="GID-15"></a>GID-15</h5><p>sh tools&#x2F;train.sh 1 23456</p>
+<ul>
+<li>1-100</li>
+<li>1-20</li>
+<li>1-10</li>
+<li>1-5</li>
+</ul>
+<h3 id="chenzt-2012—自己的方法"><a href="#chenzt-2012—自己的方法" class="headerlink" title="chenzt_2012—自己的方法"></a>chenzt_2012—自己的方法</h3><h3 id="对比实验GID-15-没有专家学习聚合，三个解码器均值结果："><a href="#对比实验GID-15-没有专家学习聚合，三个解码器均值结果：" class="headerlink" title="对比实验GID-15 没有专家学习聚合，三个解码器均值结果："></a>对比实验GID-15 没有专家学习聚合，三个解码器均值结果：</h3><p>学习率或者损失问题，后面的解码器效果一直在下降</p>
+<p>CUDA_VISIBLE_DEVICES&#x3D;0 python train_0.py<br>2012-gid15-1&#x2F;20 previous best &#x3D; 49.87（90epoch）<br>t121-gid15-1&#x2F;10 previous best &#x3D; 53.07(94epoch)<br>2013-gid15-1&#x2F;5 previous best &#x3D; 51.10(100epoch)</p>
+<p>两阶段训练，学习率修改了，损失没有除以3了</p>
+<h3 id="自己方法（二阶段训练）"><a href="#自己方法（二阶段训练）" class="headerlink" title="自己方法（二阶段训练）"></a>自己方法（二阶段训练）</h3>
+        </div>
+
+        <!-- 文章底部 -->
+        <footer class="article-footer">
+            <div class="article-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-heart"></i> 点赞 (0)
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-share"></i> 分享
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-bookmark"></i> 收藏
+                </button>
+            </div>
+            
+            <!-- 文章导航 -->
+            <div class="article-navigation">
+                
+                    <a href="../../../../2025/10/21/%E8%AE%BA%E6%96%87%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="nav-prev">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>上一篇：论文准备工作</span>
+                    </a>
+                
+                
+                    <a href="../../../../2025/10/20/%E7%A7%8B%E6%8B%9B%E7%AA%81%E5%87%BB%E6%89%BE%E5%B7%A5%E4%BD%9C%E9%80%9F%E6%88%90/" class="nav-next">
+                        <span>下一篇：秋招突击找工作速成</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                
+            </div>
+        </footer>
+    </div>
+</article>
+
+
+    </main>
+    
+    <!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 技术分享. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    
+    
+<script src="../../../../js/main.js"></script>
+
+
+</body>
+</html>
+

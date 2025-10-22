@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hexo入门使用 - 技术分享</title>
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 导航栏 -->
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="../../../../"><h2>我的博客</h2></a>
+        </div>
+        <ul class="nav-menu">
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html" class="nav-link ">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#about" class="nav-link ">
+                        关于我
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="nav-link ">
+                        项目展示
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="nav-link ">
+                        技术分享
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#contact" class="nav-link ">
+                        联系方式
+                    </a>
+                </li>
+            
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+
+    
+    <main>
+        <!-- 文章内容 -->
+
+<article class="blog-detail">
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button">
+            <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> 返回技术分享
+            </a>
+        </div>
+
+        <!-- 文章目录 -->
+        <aside class="article-toc" id="article-toc">
+            <div class="toc-header">
+                <i class="fas fa-list"></i>
+                <span>目录</span>
+            </div>
+            <nav class="toc-content" id="toc-content">
+                <!-- 目录将通过 JavaScript 动态生成 -->
+            </nav>
+        </aside>
+
+        <!-- 文章头部 -->
+        <header class="article-header">
+            <h1>Hexo入门使用</h1>
+            <div class="article-meta">
+                <span class="article-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    2025年10月20日
+                </span>
+                <span class="article-reading-time">
+                    <i class="fas fa-clock"></i>
+                    
+                    9分钟阅读
+                </span>
+                <span class="article-views">
+                    <i class="fas fa-eye"></i>
+                    0 次阅读
+                </span>
+            </div>
+            
+                <div class="article-tags">
+                    
+                        <span class="article-tag">Hexo</span>
+                    
+                        <span class="article-tag">静态网站</span>
+                    
+                </div>
+            
+        </header>
+
+        <!-- 文章内容 -->
+        <div class="article-content">
+            <h2 id="CSDN-博客文章-方法整理：GitHub-Pages-Hexo-搭建个人博客"><a href="#CSDN-博客文章-方法整理：GitHub-Pages-Hexo-搭建个人博客" class="headerlink" title="CSDN 博客文章 方法整理：GitHub Pages + Hexo 搭建个人博客"></a>CSDN 博客文章 方法整理：GitHub Pages + Hexo 搭建个人博客</h2><p><strong>文章标题:</strong> GitHub Pages + Hexo搭建个人博客网站，史上最全教程</p>
+<p><strong>文章链接:</strong> <a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190">https://blog.csdn.net/yaorongke/article/details/119089190</a></p>
+<p><strong>文章内容:</strong></p>
+<p>本文档介绍如何使用 GitHub Pages + Hexo搭建个人博客网站，完全免费，所有内容本人亲测，绝对可用。</p>
+<p><strong>一、准备工作</strong></p>
+<ol>
+<li><p><strong>GitHub 账号:</strong></p>
+<ul>
+<li>需要有一个 GitHub 账号。</li>
+<li>参考: <a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119086305">GitHub申请账号</a></li>
+</ul>
+</li>
+<li><p><strong>安装 Git:</strong></p>
+<ul>
+<li>在自己电脑上安装好 Git，用于 Hexo 部署到 GitHub。</li>
+<li>参考: <a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119085413">Git安装(Windows)</a></li>
+</ul>
+</li>
+<li><p><strong>安装 NodeJS:</strong></p>
+<ul>
+<li>在自己电脑上安装好 NodeJS，Hexo 是基于 NodeJS 编写的，以及 npm 工具。</li>
+<li>参考: <a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119084295">NodeJS安装及配置(Windows)</a></li>
+</ul>
+</li>
+</ol>
+<p><strong>二、创建仓库</strong></p>
+<ol>
+<li>在 GitHub 上创建一个新的代码仓库，用于保存网页。</li>
+<li>仓库名格式必须为 <code>&lt;用户名&gt;.github.io</code></li>
+<li>点击 <code>creating a new file</code> 创建一个新文件 <code>index.html</code> 作为网站主页。<br>示例代码：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>yaorongke<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>yaorongke的个人主页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello ~<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>GitHub Pages 中找到主页的地址：<code>https://&lt;用户名&gt;.github.io/</code></li>
+</ol>
+<p><strong>三、安装 Hexo</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init hexo-blog</span><br><span class="line"><span class="built_in">cd</span> hexo-blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<pre><code>*   浏览器访问 `http://localhost:4000`
+</code></pre>
+<p><strong>四、更换主题</strong></p>
+<ol>
+<li><p><strong>NexT 主题:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> hexo-blog</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>打开 <code>_config.yml</code> 文件，修改 <code>theme: next</code></li>
+<li>本地启动:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Fluid 主题:</strong><br>*摘自 Fluid 官网[<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid]%EF%BC%88https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid]（https://github.com/fluid-dev/hexo-theme-fluid</a>) *</p>
+<ul>
+<li><p>下载最新 release 版本解压到 <code>themes</code> 目录，并将解压出的文件夹重命名为 <code>fluid</code>。</p>
+</li>
+<li><p>修改 <code>Hexo</code> 博客目录中的 <code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">fluid</span> <span class="comment"># 指定主题</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span> <span class="comment"># 指定语言，影响主题显示的语言，按需修改</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建「关于页」</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+
+<p>创建成功后，编辑博客目录下 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性。</p>
+<p>修改后的文件示例如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2020-02-23 19:20:33</span><br><span class="line">layout: about</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里写关于页的正文，支持 Markdown, HTML</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地启动:</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>浏览器访问 <code>http://localhost:4000</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>五、创建文章</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post 测试文章</span><br></pre></td></tr></table></figure>
+
+<pre><code>*   在 `source/_posts` 目录下生成一个 `md` 文件和一个同名的资源目录。
+</code></pre>
+<p>示例，在 <code>测试文章.md</code> 中添加内容如下，演示了图片的三种引用方式。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 测试文章</span><br><span class="line">date: 2021-06-10 16:35:20</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> 原创</span><br><span class="line">categories:</span><br><span class="line"><span class="section">  - Java</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">这是一篇测试文章</span><br><span class="line"></span><br><span class="line">&#123;% asset<span class="emphasis">_img test.png 图片引用方法一 %&#125;</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">![<span class="string">图片引用方法二</span>](<span class="link">test.png</span>)</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">![<span class="string">图片引用方法三</span>](<span class="link">/images/test.png</span>)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>本地启动</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>浏览器访问 <code>http://localhost:4000</code></li>
+</ul>
+<p><strong>六、个性化页面展示</strong></p>
+<ol>
+<li><p><strong>浏览器 tab 页名称:</strong></p>
+<ul>
+<li>修改根目录下 <code>_config.yml</code> 中的 <code>title</code> 字段。</li>
+</ul>
+</li>
+<li><p><strong>博客标题:</strong></p>
+<ul>
+<li>主题目录 <code>themes\fluid</code> 下 <code>_config.yml</code> 中的 <code>blog_title</code> 字段。</li>
+</ul>
+</li>
+<li><p><strong>主页正中间的文字:</strong></p>
+<ul>
+<li>主题目录 <code>themes\fluid</code> 下 <code>_config.yml</code> 中的 <code>text</code> 字段。</li>
+</ul>
+</li>
+</ol>
+<p><strong>七、添加阅读量统计</strong></p>
+<p>借助 Leancloud 的免费服务来进行统计.</p>
+<ol>
+<li><p><strong>申请 LeanCloud 账号并创建应用:</strong></p>
+<ul>
+<li>进入 <a target="_blank" rel="noopener" href="https://console.leancloud.cn/">官网</a> 注册账号</li>
+<li>需实名认证 验证邮箱</li>
+<li>进入应用的 设置-&gt;应用凭证，找到 AppID 和 AppKey，记录下来。</li>
+</ul>
+</li>
+<li><p><strong>修改 Fluid 配置:</strong></p>
+<ul>
+<li><p>打开主题目录 <code>themes\fluid</code> 下的 <code>_config.yml</code> 文件。</p>
+</li>
+<li><p>单篇文章阅读量计数：</p>
+<ul>
+<li>打开统计开关。</li>
+<li>配置 <code>leancloud</code> 的 <code>app_id</code> 和 <code>app_key</code>。</li>
+<li>打开计数功能，统计来源改为 <code>leancloud</code>。</li>
+</ul>
+</li>
+<li><p>页面底部展示网站的 PV、UV 统计数</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>八、添加评论功能</strong></p>
+<ul>
+<li>打开主题目录 <code>themes\fluid</code>下的 <code>_config.yml</code> 文件，修改配置。<ul>
+<li>启用评论插件</li>
+<li>配置 <code>LeanCloud </code>的 <code>appId </code>和 <code>appkey</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>九、发布到GitHub Pages</strong></p>
+<ol>
+<li><p><strong>方式一:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改根目录下的 <code>_config.yml</code>，配置 GitHub 相关信息：</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;用户名&gt;/&lt;用户名&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">&lt;GitHub</span> <span class="string">Personal</span> <span class="string">access</span> <span class="string">tokens&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>部署到 GitHub:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方式二:</strong></p>
+<ul>
+<li>直接将 <code>public</code> 目录中的文件和目录推送至 <code>GitHub</code> 仓库和分支中。</li>
+</ul>
+</li>
+</ol>
+<p><strong>十、发布到自己服务器，Nginx 代理:</strong></p>
+<ol>
+<li><p>打开 <code>hexo-blog</code> 根目录下的 <code>_config.yml</code>，增加如下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">root:</span> <span class="string">/blog</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根目录下执行打包命令，打包好的文件在 <code>public</code> 目录下:<code>hexo g</code></p>
+</li>
+<li><p>将<code>public</code> 目录下的文件复制到服务器上的某个目录下</p>
+</li>
+<li><p>修改 <code>Nginx</code> 配置文件，在 <code>server</code> 节点下添加如下配置</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> /blog &#123;</span><br><span class="line">    <span class="attribute">alias</span> /opt/rkyao/fronted/hexo-blog;</span><br><span class="line">    <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启 Nginx</p>
+</li>
+<li><p>访问博客 <code>http://&lt;服务器IP&gt;/blog/</code></p>
+</li>
+</ol>
+<p><strong>十一、最终效果展示:</strong></p>
+<p>可访问如下地址查看<br><a target="_blank" rel="noopener" href="https://yaorongke.github.io/">https://yaorongke.github.io/</a></p>
+<p><strong>注:</strong> <em>请将代码中的 <code>&lt;用户名&gt;</code> 替换成您自己的 GitHub 用户名， <code>&lt;GitHub Personal access tokens&gt;</code> 替换成自己的GitHub 个人访问令牌</em></p>
+
+        </div>
+
+        <!-- 文章底部 -->
+        <footer class="article-footer">
+            <div class="article-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-heart"></i> 点赞 (0)
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-share"></i> 分享
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-bookmark"></i> 收藏
+                </button>
+            </div>
+            
+            <!-- 文章导航 -->
+            <div class="article-navigation">
+                
+                    <a href="../../../../2025/10/20/%E9%95%BF%E7%9F%AD%E6%9C%9F%E8%A7%84%E5%88%92/" class="nav-prev">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>上一篇：长短期规划</span>
+                    </a>
+                
+                
+                    <a href="../../../../2025/10/20/hello-world/" class="nav-next">
+                        <span>下一篇：Hello World</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                
+            </div>
+        </footer>
+    </div>
+</article>
+
+
+    </main>
+    
+    <!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 技术分享. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    
+    
+<script src="../../../../js/main.js"></script>
+
+
+</body>
+</html>
+

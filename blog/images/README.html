@@ -1,0 +1,36 @@
+<h1 id="图片资源目录"><a href="#图片资源目录" class="headerlink" title="图片资源目录"></a>图片资源目录</h1><h2 id="📁-存放位置"><a href="#📁-存放位置" class="headerlink" title="📁 存放位置"></a>📁 存放位置</h2><p>将所有博客和项目的封面图片放在这个目录下。</p>
+<h2 id="📝-使用方法"><a href="#📝-使用方法" class="headerlink" title="📝 使用方法"></a>📝 使用方法</h2><h3 id="在-Markdown-文件的-front-matter-中引用："><a href="#在-Markdown-文件的-front-matter-中引用：" class="headerlink" title="在 Markdown 文件的 front matter 中引用："></a>在 Markdown 文件的 front matter 中引用：</h3><pre><code class="yaml">---
+title: 我的文章
+cover: /images/my-cover.jpg
+---
+</code></pre>
+<h3 id="在文章内容中引用："><a href="#在文章内容中引用：" class="headerlink" title="在文章内容中引用："></a>在文章内容中引用：</h3><pre><code class="markdown">![图片描述](/images/my-image.jpg)
+</code></pre>
+<h2 id="🎨-推荐的封面图片"><a href="#🎨-推荐的封面图片" class="headerlink" title="🎨 推荐的封面图片"></a>🎨 推荐的封面图片</h2><p>为了效果统一，建议：</p>
+<ul>
+<li><strong>尺寸</strong>: 1200x630 px（或保持 1.9:1 比例）</li>
+<li><strong>格式</strong>: JPG 或 PNG</li>
+<li><strong>大小</strong>: 不超过 500KB</li>
+</ul>
+<h2 id="📂-目录结构示例"><a href="#📂-目录结构示例" class="headerlink" title="📂 目录结构示例"></a>📂 目录结构示例</h2><pre><code>images/
+├── vue3-reactivity.jpg          # Vue3 响应式原理封面
+├── project-blog.jpg             # 博客系统项目封面
+├── project-education.jpg        # 在线教育平台封面
+├── project-chatbot.jpg          # AI 客服系统封面
+├── project-ecommerce.jpg        # 电商管理系统封面
+├── project-iot.jpg              # 物联网平台封面
+├── project-blockchain.jpg       # 区块链钱包封面
+├── project-video-editor.jpg     # 视频剪辑工具封面
+└── default-cover.jpg            # 默认封面
+</code></pre>
+<h2 id="🔗-生成后的路径"><a href="#🔗-生成后的路径" class="headerlink" title="🔗 生成后的路径"></a>🔗 生成后的路径</h2><p>Hexo 生成后，这些图片会被复制到：</p>
+<pre><code>Hotcat-s.github.io/blog/images/
+</code></pre>
+<p>浏览器访问路径：</p>
+<pre><code>http://localhost:8000/Hotcat-s.github.io/blog/images/your-image.jpg
+</code></pre>
+<h2 id="💡-提示"><a href="#💡-提示" class="headerlink" title="💡 提示"></a>💡 提示</h2><ol>
+<li>如果没有图片，可以使用默认封面 <code>default-cover.jpg</code></li>
+<li>图片文件名建议使用英文和连字符，避免中文和特殊字符</li>
+<li>建议对图片进行压缩优化，提升加载速度</li>
+</ol>

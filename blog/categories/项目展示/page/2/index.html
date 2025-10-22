@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术分享</title>
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 导航栏 -->
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="../../../../"><h2>我的博客</h2></a>
+        </div>
+        <ul class="nav-menu">
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html" class="nav-link ">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#about" class="nav-link ">
+                        关于我
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="nav-link active">
+                        项目展示
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="nav-link ">
+                        技术分享
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#contact" class="nav-link ">
+                        联系方式
+                    </a>
+                </li>
+            
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+
+    
+    <main>
+        <!-- 分类页面标题 -->
+
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">
+            
+                项目展示
+            
+        </h1>
+        <p class="page-subtitle">
+            
+                我的个人项目作品集
+            
+        </p>
+        
+        <!-- 搜索框 -->
+        <div class="blog-search">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                
+                    <input type="text" id="blog-search-input" class="search-input" placeholder="搜索项目标题或内容...">
+                
+                <button id="clear-search" class="clear-search" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="search-results-count" class="search-results-count" style="display: none;"></div>
+        </div>
+    </div>
+</section>
+
+<!-- 内容列表 -->
+
+    <!-- 项目展示列表布局 -->
+    <section class="projects-list">
+        <div class="container">
+            
+                <!-- 项目项 -->
+                <div class="project-item">
+                    
+                        <div class="project-image">
+                            <img src="../../../../images/project-blockchain.jpg" alt="区块链数字钱包">
+                        </div>
+                    
+                    <div class="project-content">
+                        <div class="project-meta">
+                            
+                                <span class="project-type">区块链项目</span>
+                            
+                            <span class="project-date">2025年05月</span>
+                        </div>
+                        <h2>区块链数字钱包</h2>
+                        <p class="project-description">
+                            
+                                去中心化数字钱包应用，支持多链资产管理、DApp浏览、NFT展示
+                            
+                        </p>
+                        
+                            <div class="project-tech">
+                                
+                                    <span class="tech-tag">React Native</span>
+                                
+                                    <span class="tech-tag">Solidity</span>
+                                
+                                    <span class="tech-tag">Ethereum</span>
+                                
+                                    <span class="tech-tag">Web3.js</span>
+                                
+                            </div>
+                        
+                        <div class="project-actions">
+                            <a href="../../../../2025/05/12/%E9%A1%B9%E7%9B%AE5-%E5%8C%BA%E5%9D%97%E9%93%BE%E9%92%B1%E5%8C%85%E5%BA%94%E7%94%A8/" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> 查看详情
+                            </a>
+                            
+                                <a href="https://wallet-demo.example.com" class="btn btn-secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 在线演示
+                                </a>
+                            
+                            
+                                <a href="https://github.com/username/crypto-wallet" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-github"></i> 源代码
+                                </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- 项目项 -->
+                <div class="project-item">
+                    
+                        <div class="project-image">
+                            <img src="../../../../images/project-video-editor.jpg" alt="在线视频剪辑工具">
+                        </div>
+                    
+                    <div class="project-content">
+                        <div class="project-meta">
+                            
+                                <span class="project-type">前端项目</span>
+                            
+                            <span class="project-date">2025年04月</span>
+                        </div>
+                        <h2>在线视频剪辑工具</h2>
+                        <p class="project-description">
+                            
+                                基于WebAssembly的在线视频剪辑工具，支持剪切、合并、滤镜、字幕等功能
+                            
+                        </p>
+                        
+                            <div class="project-tech">
+                                
+                                    <span class="tech-tag">Vue.js</span>
+                                
+                                    <span class="tech-tag">WebAssembly</span>
+                                
+                                    <span class="tech-tag">FFmpeg</span>
+                                
+                                    <span class="tech-tag">Canvas</span>
+                                
+                            </div>
+                        
+                        <div class="project-actions">
+                            <a href="../../../../2025/04/18/%E9%A1%B9%E7%9B%AE6-%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91%E5%B7%A5%E5%85%B7/" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> 查看详情
+                            </a>
+                            
+                                <a href="https://video-editor-demo.example.com" class="btn btn-secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 在线演示
+                                </a>
+                            
+                            
+                                <a href="https://github.com/username/video-editor" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-github"></i> 源代码
+                                </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <!-- 分页 -->
+            
+                
+
+<nav class="pagination">
+    <div class="pagination-container">
+        <!-- 首页 -->
+        
+            <a href="../../" class="pagination-btn first-page" title="首页">
+                <i class="fas fa-angle-double-left"></i>
+            </a>
+        
+        
+        <!-- 上一页 -->
+        
+            <a href="../../" class="pagination-btn prev-page">
+                <i class="fas fa-chevron-left"></i> 上一页
+            </a>
+        
+        
+        <!-- 页码 -->
+        <div class="pagination-numbers">
+            
+            
+            
+                
+                    <a href="../../" class="pagination-number">1</a>
+                
+            
+                
+                    <span class="pagination-number active">2</span>
+                
+            
+            
+            
+        </div>
+        
+        <!-- 下一页 -->
+        
+        
+        <!-- 最后一页 -->
+        
+    </div>
+</nav>
+
+
+
+            
+        </div>
+    </section>
+
+
+    </main>
+    
+    <!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 技术分享. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    
+    
+<script src="../../../../js/main.js"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术分享</title>
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="../../css/main.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 导航栏 -->
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="../../"><h2>我的博客</h2></a>
+        </div>
+        <ul class="nav-menu">
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../index.html" class="nav-link ">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../index.html#about" class="nav-link ">
+                        关于我
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../categories/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="nav-link active">
+                        项目展示
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="nav-link ">
+                        技术分享
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../index.html#contact" class="nav-link ">
+                        联系方式
+                    </a>
+                </li>
+            
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+
+    
+    <main>
+        <!-- 分类页面标题 -->
+
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">
+            
+                项目展示
+            
+        </h1>
+        <p class="page-subtitle">
+            
+                我的个人项目作品集
+            
+        </p>
+        
+        <!-- 搜索框 -->
+        <div class="blog-search">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                
+                    <input type="text" id="blog-search-input" class="search-input" placeholder="搜索项目标题或内容...">
+                
+                <button id="clear-search" class="clear-search" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="search-results-count" class="search-results-count" style="display: none;"></div>
+        </div>
+    </div>
+</section>
+
+<!-- 内容列表 -->
+
+    <!-- 项目展示列表布局 -->
+    <section class="projects-list">
+        <div class="container">
+            
+                <!-- 项目项 -->
+                <div class="project-item">
+                    
+                        <div class="project-image">
+                            <img src="../../images/project-blog.jpg" alt="个人博客系统">
+                        </div>
+                    
+                    <div class="project-content">
+                        <div class="project-meta">
+                            
+                                <span class="project-type">全栈项目</span>
+                            
+                            <span class="project-date">2025年10月</span>
+                        </div>
+                        <h2>个人博客系统</h2>
+                        <p class="project-description">
+                            
+                                基于 Vue.js 和 Node.js 的现代化个人博客系统，支持 Markdown 编辑、评论系统等功能
+                            
+                        </p>
+                        
+                            <div class="project-tech">
+                                
+                                    <span class="tech-tag">Vue.js</span>
+                                
+                                    <span class="tech-tag">Node.js</span>
+                                
+                                    <span class="tech-tag">MongoDB</span>
+                                
+                            </div>
+                        
+                        <div class="project-actions">
+                            <a href="../../2025/10/21/%E7%A4%BA%E4%BE%8B%E9%A1%B9%E7%9B%AE-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> 查看详情
+                            </a>
+                            
+                                <a href="https://demo.example.com" class="btn btn-secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 在线演示
+                                </a>
+                            
+                            
+                                <a href="https://github.com/username/blog-project" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-github"></i> 源代码
+                                </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- 项目项 -->
+                <div class="project-item">
+                    
+                        <div class="project-image">
+                            <img src="../../images/project-education.jpg" alt="在线教育平台">
+                        </div>
+                    
+                    <div class="project-content">
+                        <div class="project-meta">
+                            
+                                <span class="project-type">全栈项目</span>
+                            
+                            <span class="project-date">2025年09月</span>
+                        </div>
+                        <h2>在线教育平台</h2>
+                        <p class="project-description">
+                            
+                                基于微服务架构的在线教育平台，支持直播授课、课程管理、在线考试等功能
+                            
+                        </p>
+                        
+                            <div class="project-tech">
+                                
+                                    <span class="tech-tag">React</span>
+                                
+                                    <span class="tech-tag">Spring Boot</span>
+                                
+                                    <span class="tech-tag">MySQL</span>
+                                
+                                    <span class="tech-tag">WebRTC</span>
+                                
+                            </div>
+                        
+                        <div class="project-actions">
+                            <a href="../../2025/09/15/%E9%A1%B9%E7%9B%AE1-%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2%E5%B9%B3%E5%8F%B0/" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> 查看详情
+                            </a>
+                            
+                                <a href="https://edu-demo.example.com" class="btn btn-secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 在线演示
+                                </a>
+                            
+                            
+                                <a href="https://github.com/username/online-education" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-github"></i> 源代码
+                                </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- 项目项 -->
+                <div class="project-item">
+                    
+                        <div class="project-image">
+                            <img src="../../images/project-chatbot.jpg" alt="AI智能客服系统">
+                        </div>
+                    
+                    <div class="project-content">
+                        <div class="project-meta">
+                            
+                                <span class="project-type">AI项目</span>
+                            
+                            <span class="project-date">2025年08月</span>
+                        </div>
+                        <h2>AI智能客服系统</h2>
+                        <p class="project-description">
+                            
+                                基于深度学习的智能客服系统，支持意图识别、多轮对话、知识图谱问答
+                            
+                        </p>
+                        
+                            <div class="project-tech">
+                                
+                                    <span class="tech-tag">Vue.js</span>
+                                
+                                    <span class="tech-tag">Python</span>
+                                
+                                    <span class="tech-tag">NLP</span>
+                                
+                                    <span class="tech-tag">TensorFlow</span>
+                                
+                            </div>
+                        
+                        <div class="project-actions">
+                            <a href="../../2025/08/20/%E9%A1%B9%E7%9B%AE2-%E6%99%BA%E8%83%BD%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F/" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> 查看详情
+                            </a>
+                            
+                                <a href="https://chatbot-demo.example.com" class="btn btn-secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 在线演示
+                                </a>
+                            
+                            
+                                <a href="https://github.com/username/ai-chatbot" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-github"></i> 源代码
+                                </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- 项目项 -->
+                <div class="project-item">
+                    
+                        <div class="project-image">
+                            <img src="../../images/project-ecommerce.jpg" alt="电商后台管理系统">
+                        </div>
+                    
+                    <div class="project-content">
+                        <div class="project-meta">
+                            
+                                <span class="project-type">企业项目</span>
+                            
+                            <span class="project-date">2025年07月</span>
+                        </div>
+                        <h2>电商后台管理系统</h2>
+                        <p class="project-description">
+                            
+                                功能完善的电商后台管理系统，支持商品管理、订单处理、数据统计等功能
+                            
+                        </p>
+                        
+                            <div class="project-tech">
+                                
+                                    <span class="tech-tag">Vue.js</span>
+                                
+                                    <span class="tech-tag">Node.js</span>
+                                
+                                    <span class="tech-tag">Element Plus</span>
+                                
+                                    <span class="tech-tag">PostgreSQL</span>
+                                
+                            </div>
+                        
+                        <div class="project-actions">
+                            <a href="../../2025/07/10/%E9%A1%B9%E7%9B%AE3-%E7%94%B5%E5%95%86%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> 查看详情
+                            </a>
+                            
+                                <a href="https://admin-demo.example.com" class="btn btn-secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 在线演示
+                                </a>
+                            
+                            
+                                <a href="https://github.com/username/ecommerce-admin" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-github"></i> 源代码
+                                </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- 项目项 -->
+                <div class="project-item">
+                    
+                        <div class="project-image">
+                            <img src="../../images/project-iot.jpg" alt="物联网设备监控平台">
+                        </div>
+                    
+                    <div class="project-content">
+                        <div class="project-meta">
+                            
+                                <span class="project-type">物联网项目</span>
+                            
+                            <span class="project-date">2025年06月</span>
+                        </div>
+                        <h2>物联网设备监控平台</h2>
+                        <p class="project-description">
+                            
+                                实时物联网设备监控平台，支持海量设备接入、数据采集、实时告警
+                            
+                        </p>
+                        
+                            <div class="project-tech">
+                                
+                                    <span class="tech-tag">React</span>
+                                
+                                    <span class="tech-tag">MQTT</span>
+                                
+                                    <span class="tech-tag">InfluxDB</span>
+                                
+                                    <span class="tech-tag">Go</span>
+                                
+                            </div>
+                        
+                        <div class="project-actions">
+                            <a href="../../2025/06/05/%E9%A1%B9%E7%9B%AE4-%E7%89%A9%E8%81%94%E7%BD%91%E7%9B%91%E6%8E%A7%E5%B9%B3%E5%8F%B0/" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> 查看详情
+                            </a>
+                            
+                                <a href="https://iot-demo.example.com" class="btn btn-secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> 在线演示
+                                </a>
+                            
+                            
+                                <a href="https://github.com/username/iot-platform" class="btn btn-outline" target="_blank">
+                                    <i class="fab fa-github"></i> 源代码
+                                </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <!-- 分页 -->
+            
+                
+
+<nav class="pagination">
+    <div class="pagination-container">
+        <!-- 首页 -->
+        
+        
+        <!-- 上一页 -->
+        
+        
+        <!-- 页码 -->
+        <div class="pagination-numbers">
+            
+            
+            
+                
+                    <span class="pagination-number active">1</span>
+                
+            
+                
+                    <a href="page/2/" class="pagination-number">2</a>
+                
+            
+            
+            
+        </div>
+        
+        <!-- 下一页 -->
+        
+            <a href="page/2/" class="pagination-btn next-page">
+                下一页 <i class="fas fa-chevron-right"></i>
+            </a>
+        
+        
+        <!-- 最后一页 -->
+        
+            <a href="page/2/" class="pagination-btn last-page" title="最后一页">
+                <i class="fas fa-angle-double-right"></i>
+            </a>
+        
+    </div>
+</nav>
+
+
+
+            
+        </div>
+    </section>
+
+
+    </main>
+    
+    <!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 技术分享. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    
+    
+<script src="../../js/main.js"></script>
+
+
+</body>
+</html>
+
