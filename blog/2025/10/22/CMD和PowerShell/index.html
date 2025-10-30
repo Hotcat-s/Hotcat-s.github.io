@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMD和PowerShell - 技术分享</title>
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 导航栏 -->
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="../../../../"><h2>我的博客</h2></a>
+        </div>
+        <ul class="nav-menu">
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html" class="nav-link ">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#about" class="nav-link ">
+                        关于我
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="nav-link ">
+                        项目展示
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="nav-link ">
+                        技术分享
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#contact" class="nav-link ">
+                        联系方式
+                    </a>
+                </li>
+            
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+
+    
+    <main>
+        <!-- 文章内容 -->
+
+<article class="blog-detail">
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button">
+            <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> 返回技术分享
+            </a>
+        </div>
+
+        <!-- 文章目录 -->
+        <aside class="article-toc" id="article-toc">
+            <div class="toc-header">
+                <i class="fas fa-list"></i>
+                <span>目录</span>
+            </div>
+            <nav class="toc-content" id="toc-content">
+                <!-- 目录将通过 JavaScript 动态生成 -->
+            </nav>
+        </aside>
+
+        <!-- 文章头部 -->
+        <header class="article-header">
+            <h1>CMD和PowerShell</h1>
+            <div class="article-meta">
+                <span class="article-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    2025年10月22日
+                </span>
+                <span class="article-reading-time">
+                    <i class="fas fa-clock"></i>
+                    
+                    6分钟阅读
+                </span>
+                <span class="article-views">
+                    <i class="fas fa-eye"></i>
+                    0 次阅读
+                </span>
+            </div>
+            
+                <div class="article-tags">
+                    
+                        <span class="article-tag">CMD</span>
+                    
+                        <span class="article-tag">PowerShell</span>
+                    
+                </div>
+            
+        </header>
+
+        <!-- 文章内容 -->
+        <div class="article-content">
+            <p>简单来说，<strong>PowerShell 是 CMD (命令提示符) 的现代化、功能极其强大的继任者</strong>。</p>
+<p>把它们想象成两种工具：</p>
+<ul>
+<li><strong>CMD (命令提示符)</strong> 就像一把<strong>瑞士军刀</strong>：它很方便，能完成一些基本的、快速的任务，比如切削、开瓶盖。每个Windows用户都熟悉它。</li>
+<li><strong>PowerShell</strong> 就像一个<strong>万能工具箱</strong>：里面有扳手、电钻、螺丝刀、万用表等全套工具。它能完成瑞士军刀的所有工作，并且能处理更复杂、更专业的任务，比如修理整个引擎。</li>
+</ul>
+<p>下面我们从几个关键维度进行详细对比：</p>
+<h3 id="核心区别：基于文本-vs-基于对象"><a href="#核心区别：基于文本-vs-基于对象" class="headerlink" title="核心区别：基于文本 vs. 基于对象"></a>核心区别：基于文本 vs. 基于对象</h3><p>这是两者最根本、最重要的区别。</p>
+<ul>
+<li><p><strong>CMD (命令提示符)</strong>: **基于文本 (Text-based)**。</p>
+<ul>
+<li>CMD中的所有命令，其输入和输出都是纯文本字符串。</li>
+<li>当你使用管道符 <code>|</code> 连接命令时，只是把前一个命令输出的文本，作为后一个命令的输入。你需要自己解析这些文本来获取有用的信息（比如用 <code>find</code> 命令查找特定字符串）。</li>
+<li><strong>例子</strong>: <code>dir</code> 命令输出一堆文本，如果你想找到所有 <code>.log</code> 文件，你可能需要 <code>dir | find &quot;.log&quot;</code>，但这只是文本匹配，你无法直接对找到的文件进行“大小排序”、“修改日期”等复杂操作。</li>
+</ul>
+</li>
+<li><p><strong>PowerShell</strong>: **基于对象 (Object-based)**。</p>
+<ul>
+<li>PowerShell 在 .NET 框架之上构建，命令（称为 <code>Cmdlet</code>）的输入和输出是**结构化的对象 (Object)**，而不仅仅是文本。</li>
+<li>这些对象有自己的属性（Properties）和方法（Methods），比如一个文件对象有 <code>.Name</code>, <code>.Length</code> (大小), <code>.CreationTime</code> (创建时间) 等属性。</li>
+<li>当你使用管道符 <code>|</code> 时，是把整个对象集合传递给下一个命令。下一个命令可以直接操作这些对象的属性。</li>
+<li><strong>例子</strong>: <code>Get-ChildItem | Where-Object &#123; $_.Extension -eq &quot;.log&quot; &#125; | Sort-Object Length -Descending</code>。<ul>
+<li><code>Get-ChildItem</code> 获取当前目录下的所有文件和文件夹<strong>对象</strong>。</li>
+<li><code>Where-Object</code> 过滤出扩展名属性 (<code>.Extension</code>) 为 <code>.log</code> 的<strong>对象</strong>。</li>
+<li><code>Sort-Object</code> 按大小属性 (<code>.Length</code>) 对这些<strong>对象</strong>进行降序排序。</li>
+<li>整个过程无需解析任何文本，精确、强大且不易出错。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="详细对比表格"><a href="#详细对比表格" class="headerlink" title="详细对比表格"></a>详细对比表格</h3><table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">CMD (命令提示符)</th>
+<th align="left">PowerShell</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>本质</strong></td>
+<td align="left">基于<strong>文本</strong>流</td>
+<td align="left">基于**.NET对象**流</td>
+</tr>
+<tr>
+<td align="left"><strong>命令</strong></td>
+<td align="left">简单命令 (如 <code>dir</code>, <code>copy</code>, <code>del</code>)</td>
+<td align="left"><strong>Cmdlet</strong> (动词-名词结构, 如 <code>Get-ChildItem</code>, <code>Copy-Item</code>, <code>Remove-Item</code>)，易于理解和发现。</td>
+</tr>
+<tr>
+<td align="left">**管道 &#96;</td>
+<td align="left">&#96;**</td>
+<td align="left">传递纯文本字符串</td>
+</tr>
+<tr>
+<td align="left"><strong>脚本能力</strong></td>
+<td align="left">批处理脚本 (<code>.bat</code>, <code>.cmd</code>)，功能非常有限，语法古怪，缺乏现代编程语言特性</td>
+<td align="left"><strong>PowerShell脚本</strong> (<code>.ps1</code>)，是真正的编程语言，支持变量、循环、函数、类、错误处理等</td>
+</tr>
+<tr>
+<td align="left"><strong>数据处理</strong></td>
+<td align="left">难以处理结构化数据 (如 CSV, JSON, XML)</td>
+<td align="left">内置命令轻松<strong>导入、导出和操作</strong> CSV, JSON, XML 等格式数据</td>
+</tr>
+<tr>
+<td align="left"><strong>系统管理</strong></td>
+<td align="left">局限于基本的文件和网络操作</td>
+<td align="left"><strong>为系统管理而生</strong>。可管理Windows服务的方方面面：注册表、WMI、事件日志、进程、服务、Active Directory、Azure、Office 365 等</td>
+</tr>
+<tr>
+<td align="left"><strong>跨平台</strong></td>
+<td align="left">仅限 Windows</td>
+<td align="left"><strong>PowerShell Core (6.0+)</strong> 是开源且跨平台的，可在 Windows, macOS, Linux上运行</td>
+</tr>
+<tr>
+<td align="left"><strong>别名 (Alias)</strong></td>
+<td align="left">无此概念</td>
+<td align="left">大量使用别名来兼容旧习惯，比如 <code>dir</code> 和 <code>ls</code> 都是 <code>Get-ChildItem</code> 的别名，<code>cls</code> 是 <code>Clear-Screen</code> 的别名。<strong>这让 CMD 用户可以平滑过渡。</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>帮助系统</strong></td>
+<td align="left"><code>command /?</code> 提供非常有限的文本帮助</td>
+<td align="left"><code>Get-Help  -Full / -Online / -Examples</code> 提供极其详细、结构化的帮助文档和示例</td>
+</tr>
+<tr>
+<td align="left"><strong>未来方向</strong></td>
+<td align="left">处于<strong>维护</strong>状态，仅为兼容性保留，不会有新功能</td>
+<td align="left"><strong>微软主推</strong>的命令行和自动化工具，是Windows和云服务的管理核心，持续快速发展</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="总结与建议"><a href="#总结与建议" class="headerlink" title="总结与建议"></a>总结与建议</h3><h4 id="什么时候可以使用-CMD？"><a href="#什么时候可以使用-CMD？" class="headerlink" title="什么时候可以使用 CMD？"></a>什么时候可以使用 CMD？</h4><ol>
+<li><strong>执行非常简单的命令</strong>：比如 <code>ipconfig</code>, <code>ping</code>, <code>tracert</code> 等，这些在两个环境中效果一样。</li>
+<li>**运行旧的批处理脚本 (<code>.bat</code>)**：为了兼容性，这些脚本仍然需要CMD环境。</li>
+<li><strong>习惯使然</strong>：对于一些用了几十年的简单文件操作，肌肉记忆可能会让你敲出 <code>dir</code> 或 <code>copy</code>。</li>
+</ol>
+<h4 id="什么时候应该使用-PowerShell？"><a href="#什么时候应该使用-PowerShell？" class="headerlink" title="什么时候应该使用 PowerShell？"></a>什么时候应该使用 PowerShell？</h4><p><strong>几乎所有其他情况，特别是当你需要自动化或进行复杂的系统管理时。</strong></p>
+<ol>
+<li><strong>系统管理员和 IT Pro</strong>：PowerShell 是你的首选，甚至是必备工具。</li>
+<li><strong>开发人员</strong>：用于构建脚本、自动化部署、管理环境。</li>
+<li><strong>需要处理数据</strong>：当你需要从文件中读取数据、筛选、然后生成报告时，PowerShell 无比强大。</li>
+<li><strong>希望提升效率的进阶用户</strong>：学习PowerShell是对自己未来技能的一项极佳投资。</li>
+</ol>
+<p><strong>结论：</strong><br>CMD 是过去的工具，虽然简单但功能有限。PowerShell 是现在和未来的标准，它更复杂，学习曲线更陡峭，但一旦掌握，你将获得无与伦比的强大能力和效率。</p>
+
+        </div>
+
+        <!-- 文章底部 -->
+        <footer class="article-footer">
+            <div class="article-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-heart"></i> 点赞 (0)
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-share"></i> 分享
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-bookmark"></i> 收藏
+                </button>
+            </div>
+            
+            <!-- 文章导航 -->
+            <div class="article-navigation">
+                
+                    <a href="../../../../2025/10/22/wordpress%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%A7%84%E5%88%92/" class="nav-prev">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>上一篇：WordPress运营规划</span>
+                    </a>
+                
+                
+                    <a href="../../../../2025/10/21/%E7%A4%BA%E4%BE%8B%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB-Vue3%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" class="nav-next">
+                        <span>下一篇：Vue 3 响应式原理深入解析</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                
+            </div>
+        </footer>
+    </div>
+</article>
+
+
+    </main>
+    
+    <!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 技术分享. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    
+    
+<script src="../../../../js/main.js"></script>
+
+
+</body>
+</html>
+
