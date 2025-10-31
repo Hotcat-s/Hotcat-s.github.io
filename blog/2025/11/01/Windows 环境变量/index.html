@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windows 环境变量终极指南 - 技术分享</title>
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 导航栏 -->
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="../../../../"><h2>我的博客</h2></a>
+        </div>
+        <ul class="nav-menu">
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html" class="nav-link ">
+                        首页
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#about" class="nav-link ">
+                        关于我
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="nav-link ">
+                        项目展示
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="nav-link ">
+                        技术分享
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    
+                    <a href="../../../../../index.html#contact" class="nav-link ">
+                        联系方式
+                    </a>
+                </li>
+            
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+
+    
+    <main>
+        <!-- 文章内容 -->
+
+<article class="blog-detail">
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="back-button">
+            <a href="../../../../categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> 返回技术分享
+            </a>
+        </div>
+
+        <!-- 文章目录 -->
+        <aside class="article-toc" id="article-toc">
+            <div class="toc-header">
+                <i class="fas fa-list"></i>
+                <span>目录</span>
+            </div>
+            <nav class="toc-content" id="toc-content">
+                <!-- 目录将通过 JavaScript 动态生成 -->
+            </nav>
+        </aside>
+
+        <!-- 文章头部 -->
+        <header class="article-header">
+            <h1>Windows 环境变量终极指南</h1>
+            <div class="article-meta">
+                <span class="article-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    2025年11月01日
+                </span>
+                <span class="article-reading-time">
+                    <i class="fas fa-clock"></i>
+                    
+                    12分钟阅读
+                </span>
+                <span class="article-views">
+                    <i class="fas fa-eye"></i>
+                    0 次阅读
+                </span>
+            </div>
+            
+                <div class="article-tags">
+                    
+                        <span class="article-tag">CMD</span>
+                    
+                        <span class="article-tag">环境变量</span>
+                    
+                        <span class="article-tag">Path</span>
+                    
+                </div>
+            
+        </header>
+
+        <!-- 文章内容 -->
+        <div class="article-content">
+            <p>关于环境变量的问题，理解了它们，你就能自如地在命令行为任何程序配置运行环境。下面是一份详细的总结。</p>
+<h3 id="第一部分：变量的两种核心角色：“地址簿”-与-“系统导航员”"><a href="#第一部分：变量的两种核心角色：“地址簿”-与-“系统导航员”" class="headerlink" title="第一部分：变量的两种核心角色：“地址簿” 与 “系统导航员”"></a><strong>第一部分：变量的两种核心角色：“地址簿” 与 “系统导航员”</strong></h3><p>在 Windows 环境变量中，变量看似都是“名字&#x3D;值”的形式，但根据其作用，可以分为两大类：</p>
+<p><strong>1. 自定义变量 (如 <code>JAVA_HOME</code>, <code>MAVEN_HOME</code>)：它们是“地址簿”</strong></p>
+<ul>
+<li><strong>作用</strong>: 它们的主要作用是<strong>存储一个路径信息</strong>，供其他程序或变量方便地引用。它们本身不会让任何命令变得可以运行。</li>
+<li><strong>命名</strong>: 你可以<strong>完全自定义</strong>命名，但业界有通用规范（如 <code>XXX_HOME</code> 表示某程序的根目录），遵守规范能让配置更清晰，也方便其他工具（如 IDEA、Tomcat）自动识别。</li>
+<li><strong>比喻</strong>: 把 <code>MAVEN_HOME</code> 想象成你在手机通讯录里存的一个联系人，名字叫“Maven总部”，地址是“E:...\apache-maven-3.9.11”。当你需要去“Maven总部”时，直接查这个联系人就行，无需每次都去记忆和输入那个复杂的地址。</li>
+</ul>
+<p><strong>2. <code>Path</code> 变量：它是独一无二的“系统导航员”</strong></p>
+<ul>
+<li><strong>作用</strong>: <code>Path</code> 变量是<strong>唯一一个</strong>操作系统命令解释器（如 CMD、PowerShell）会<strong>主动查看</strong>的特殊变量。它的作用是告诉命令解释器：“当用户输入一个命令（如 <code>mvn</code>, <code>java</code>）时，除了当前目录，你还应该去<strong>哪些文件夹里寻找</strong>这个命令对应的可执行文件（<code>.exe</code>, <code>.bat</code> 等）。”</li>
+<li><strong>命名</strong>: 它的名字是<strong>固定且唯一的</strong>，必须是 <code>Path</code>（不区分大小写）。系统不认识 <code>Path2</code> 或 <code>MyPath</code>。</li>
+<li><strong>比喻</strong>: <code>Path</code> 变量就像是外卖平台的“合作餐厅列表”。当你下单（输入命令）一份“宫保鸡丁”(<code>mvn</code>)时，平台（命令解释器）只会严格按照这个列表，挨家餐厅去问：“你家有宫保鸡丁吗？”。</li>
+</ul>
+<h4 id="核心结论：为什么仅创建-MAVEN-HOME-变量无法运行-mvn-命令？"><a href="#核心结论：为什么仅创建-MAVEN-HOME-变量无法运行-mvn-命令？" class="headerlink" title="核心结论：为什么仅创建 MAVEN_HOME 变量无法运行 mvn 命令？"></a><strong>核心结论：为什么仅创建 <code>MAVEN_HOME</code> 变量无法运行 <code>mvn</code> 命令？</strong></h4><p>因为你只是创建了一个“地址簿” (<code>MAVEN_HOME</code>)，但并没有把这个地址告诉“导航员” (<code>Path</code>)。命令解释器不认识你的私人地址簿，它只认官方的导航列表。</p>
+<hr>
+<h3 id="第二部分：深入实践：变量名、命令与CMD的执行逻辑"><a href="#第二部分：深入实践：变量名、命令与CMD的执行逻辑" class="headerlink" title="第二部分：深入实践：变量名、命令与CMD的执行逻辑"></a><strong>第二部分：深入实践：变量名、命令与CMD的执行逻辑</strong></h3><p>这是一个绝佳的实验性问题！它直接触及了“变量”和“命令”在命令行中的根本区别。我们来详细分析一下，如果你创建了一个指向 Maven <code>bin</code> 目录的变量，然后直接在 CMD 中运行这个变量名，会发生什么。</p>
+<h4 id="场景设定"><a href="#场景设定" class="headerlink" title="场景设定"></a><strong>场景设定</strong></h4><ol>
+<li>你打开系统环境变量设置。</li>
+<li>在“系统变量”或“用户变量”区域（与 <code>Path</code> 同级），你新建了一个变量。</li>
+<li><strong>变量名</strong>: <code>MY_MAVEN_BIN</code></li>
+<li><strong>变量值</strong>: <code>E:\codes\get_jobs\maven\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin</code></li>
+<li>保存设置，然后打开一个<strong>新</strong>的 CMD 窗口。</li>
+</ol>
+<h4 id="实验与结果"><a href="#实验与结果" class="headerlink" title="实验与结果"></a><strong>实验与结果</strong></h4><p>现在，你在新的 CMD 窗口里输入 <code>MY_MAVEN_BIN</code> 然后回车。你会看到的结果是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;MY_MAVEN_BIN&#x27; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br></pre></td></tr></table></figure>
+
+<h4 id="为什么会这样：CMD的命令执行逻辑"><a href="#为什么会这样：CMD的命令执行逻辑" class="headerlink" title="为什么会这样：CMD的命令执行逻辑"></a><strong>为什么会这样：CMD的命令执行逻辑</strong></h4><p>这个结果完美地印证了我们之前讨论的 <code>Path</code> 变量的特殊性。当你在 CMD 中输入一串字符（比如 <code>MY_MAVEN_BIN</code>）并按回车时，CMD 会按照一个非常严格的顺序来尝试理解你的意图：</p>
+<ol>
+<li><strong>这是不是一个内部命令？</strong> 比如 <code>dir</code>, <code>echo</code>, <code>cd</code>。显然，<code>MY_MAVEN_BIN</code> 不是。</li>
+<li><strong>这是不是一个位于“当前目录”下的可执行文件？</strong> CMD 会寻找 <code>MY_MAVEN_BIN.exe</code>, <code>MY_MAVEN_BIN.bat</code> 等。基本不可能找到。</li>
+<li><strong>这是不是一个位于 <code>Path</code> 变量所包含的目录中的可执行文件？</strong> 这是关键！CMD 会遍历 <code>Path</code> 变量里的<strong>每一个路径</strong>，去寻找有没有 <code>MY_MAVEN_BIN.exe</code> 等文件。</li>
+</ol>
+<p><strong>重点来了</strong>：CMD <strong>不会</strong> 把你输入的 <code>MY_MAVEN_BIN</code> 当作一个<strong>变量名</strong>去查找它的值。它只把你输入的字符串当作一个<strong>命令的名称</strong>。你创建的 <code>MY_MAVEN_BIN</code> 变量，对于 CMD 来说，只是一个存储在环境中的字符串，它本身不是一个“命令”。</p>
+<h4 id="那-MY-MAVEN-BIN-这个变量该如何使用呢？"><a href="#那-MY-MAVEN-BIN-这个变量该如何使用呢？" class="headerlink" title="那 MY_MAVEN_BIN 这个变量该如何使用呢？"></a><strong>那 <code>MY_MAVEN_BIN</code> 这个变量该如何使用呢？</strong></h4><p>你创建的这个变量当然非常有用，但你需要用一种 CMD 能听懂的方式去使用它——你需要明确地告诉 CMD：“请把这个变量的值取出来！”</p>
+<p>在 CMD 中，获取变量值的语法是使用 <code>%...%</code> 将变量名包裹起来。</p>
+<ul>
+<li><p><strong>用法1：切换到该目录</strong></p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">%MY_MAVEN_BIN%</span></span><br></pre></td></tr></table></figure>
+<p>  CMD 会将 <code>%MY_MAVEN_BIN%</code> 替换成它的值 <code>E:\...\bin</code>，然后执行 <code>cd E:\...\bin</code>。进入该目录后，再输入 <code>mvn</code> 就可以执行了。</p>
+</li>
+<li><p><strong>用法2：直接执行该目录下的命令</strong></p>
+  <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">%MY_MAVEN_BIN%</span>\mvn -v</span><br></pre></td></tr></table></figure>
+<p>  CMD 会先将命令展开为 <code>E:\...\bin\mvn -v</code>，这是一个带有完整路径的命令，系统可以准确找到并执行。</p>
+</li>
+<li><p><strong>用法3（最佳实践）：将其添加到 Path 中</strong><br>  这就是我们将要在下一部分详述的，最一劳永逸的方法。</p>
+</li>
+</ul>
+<p>通过这个思想实验，你已经亲手验证了命令行环境中最基本也最重要的一个工作原理！</p>
+<hr>
+<h3 id="第三部分：正确的两步配置法（理论与实践）"><a href="#第三部分：正确的两步配置法（理论与实践）" class="headerlink" title="第三部分：正确的两步配置法（理论与实践）"></a><strong>第三部分：正确的两步配置法（理论与实践）</strong></h3><p>为了让一个命令（如 <code>mvn</code>）在任何路径下都能运行，你必须完成以下两个步骤：</p>
+<p><strong>第一步：创建“地址簿”条目（定义 <code>_HOME</code> 变量）</strong><br>这一步是为了配置的清晰和未来的可维护性。</p>
+<ol>
+<li>新建一个变量，变量名使用规范命名，如 <code>MAVEN_HOME</code>。</li>
+<li>变量值为程序的主目录，**不包含 <code>bin</code>**。例如：<code>E:\...\apache-maven-3.9.11</code>。</li>
+</ol>
+<p><strong>第二步：将“地址”告知“导航员”（编辑 <code>Path</code> 变量）</strong><br>这一步是让命令能被系统找到的关键。</p>
+<ol>
+<li>找到并编辑 <code>Path</code> 变量。</li>
+<li>新建一个条目，使用引用语法指向 <code>bin</code> 目录：<code>%MAVEN_HOME%\bin</code>。</li>
+</ol>
+<ul>
+<li><strong><code>%...%</code> 语法</strong>: 正如第二部分所演示的，这是 Windows 引用其他环境变量值的方式。<code>%MAVEN_HOME%</code> 会被系统自动替换为你第一步设置的那个长路径。</li>
+<li><strong>好处</strong>: 当未来你升级 Maven 版本时，只需要修改 <code>MAVEN_HOME</code> 这一个“地址簿”条目，<code>Path</code> 中的引用会自动指向新版本的 <code>bin</code> 目录，无需改动，极大降低了出错风险。</li>
+</ul>
+<hr>
+<h3 id="第四部分：变量的作用域：系统变量-vs-用户变量"><a href="#第四部分：变量的作用域：系统变量-vs-用户变量" class="headerlink" title="第四部分：变量的作用域：系统变量 vs. 用户变量"></a><strong>第四部分：变量的作用域：系统变量 vs. 用户变量</strong></h3><p>这是另一个关键点，决定了变量的生效范围和引用关系。</p>
+<p><strong>核心规则：系统变量先加载，用户变量后加载。</strong></p>
+<ul>
+<li><strong>比喻</strong>: 把环境变量的加载想象成盖房子。<ul>
+<li><strong>系统变量</strong> &#x3D; 地基和一楼（公共区域，所有住户共用）。</li>
+<li><strong>用户变量</strong> &#x3D; 你自己的二楼（私人区域，仅你自己使用）。</li>
+</ul>
+</li>
+</ul>
+<p>根据这个“先盖一楼，再盖二楼”的顺序，我们得出以下<strong>黄金法则</strong>：</p>
+<ol>
+<li><strong>加载顺序</strong>: <strong>系统变量 -&gt; 用户变量</strong>。</li>
+<li><strong>可见性（引用规则）</strong>:<ul>
+<li><strong>向下可见</strong>: 用户变量可以引用（“看见”）系统变量。 (<strong>用户 -&gt; 系统 ✅</strong>)</li>
+<li><strong>向上不可见</strong>: 系统变量无法引用（“看见”）用户变量。 (<strong>系统 -&gt; 用户 ❌</strong>)<ul>
+<li><strong>原因</strong>: 加载系统变量时，用户变量还不存在，所以系统 <code>Path</code> 里的 <code>%MY_USER_VAR%</code> 无法被解析。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>冲突与合并</strong>:<ul>
+<li><strong>普通变量</strong>: 如果系统和用户中定义了同名变量（如 <code>TEMP</code>），对该用户而言，<strong>用户变量的值会覆盖系统变量的值</strong>。</li>
+<li><strong><code>Path</code> 变量</strong>: 系统非常智能，它不会覆盖，而是<strong>将用户 <code>Path</code> 的值追加到系统 <code>Path</code> 值的后面</strong>，形成一个更长的、完整的 <code>Path</code> 供当前用户使用。</li>
+</ul>
+</li>
+</ol>
+<h3 id="最终总结与最佳实践"><a href="#最终总结与最佳实践" class="headerlink" title="最终总结与最佳实践"></a><strong>最终总结与最佳实践</strong></h3><table>
+<thead>
+<tr>
+<th align="left">特性&#x2F;问题</th>
+<th align="left"><code>Path</code> 变量 (“导航员”)</th>
+<th align="left">其他自定义变量 (如 <code>JAVA_HOME</code>, “地址簿”)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>用途</strong></td>
+<td align="left"><strong>系统指令</strong>：定义命令的搜索路径。</td>
+<td align="left"><strong>地址簿</strong>：存储路径信息，供引用。</td>
+</tr>
+<tr>
+<td align="left"><strong>命名</strong></td>
+<td align="left"><strong>固定</strong>，必须是 <code>Path</code>。</td>
+<td align="left"><strong>完全自定义</strong>，但推荐遵守行业规范。</td>
+</tr>
+<tr>
+<td align="left"><strong>核心机制</strong></td>
+<td align="left">被命令解释器<strong>主动、特殊处理</strong>。</td>
+<td align="left">仅作为简单的<strong>键值对存储</strong>，被动等待引用。</td>
+</tr>
+</tbody></table>
+<p><strong>最佳实践建议：</strong></p>
+<p>对于像 Java、Maven、Git、Node.js 这类希望在整个系统中（所有用户）都能使用的基础工具：</p>
+<ol>
+<li>在 <strong>系统变量</strong> 中创建 <code>JAVA_HOME</code>, <code>MAVEN_HOME</code> 等。</li>
+<li>在 <strong>系统变量</strong> 的 <code>Path</code> 中通过 <code>%JAVA_HOME%\bin</code> 的方式添加路径。</li>
+</ol>
+<p>这样做可以确保配置的一致性，所有登录这台电脑的用户都能享受到相同的开发环境。</p>
+<h3 id="Windows-环境变量的-“覆盖”和“合并”-规则。"><a href="#Windows-环境变量的-“覆盖”和“合并”-规则。" class="headerlink" title="Windows 环境变量的 “覆盖”和“合并” 规则。"></a>Windows 环境变量的 <strong>“覆盖”和“合并”</strong> 规则。</h3><ul>
+<li><p><strong>对于普通变量 (如 <code>MAVEN_HOME</code>)：</strong></p>
+<ul>
+<li>系统会 ​<strong>优先使用用户变量</strong>​。</li>
+<li>如果一个变量（比如 <code>MY_VAR</code>）在用户变量和系统变量里都存在，那么在你的用户会话中，<code>echo %MY_VAR%</code> 显示的是 ​<strong>用户变量的值</strong>​。</li>
+<li>如果只在系统变量里存在（就像你现在的 <code>MAVEN_HOME</code>），那么 <code>echo %MAVEN_HOME%</code> 就显示 ​<strong>系统变量的值</strong>​。</li>
+<li><strong>结论：</strong> 你的 <code>echo %MAVEN_HOME%</code> 显示的是 <strong>系统变量</strong> 的值，因为它只存在于那里。</li>
+</ul>
+</li>
+<li><p><strong>对于特殊的 <code>Path</code> 变量：</strong></p>
+<ul>
+<li>它不是覆盖，而是 ​<strong>合并（拼接）</strong>​！</li>
+<li>Windows 会先读取 ​**用户 <code>Path</code>**​，然后把它和 <strong>系统 <code>Path</code></strong> 拼接在一起，形成一个最终的、完整的 <code>Path</code>。</li>
+<li>通常，​<strong>用户 <code>Path</code> 在前，系统 <code>Path</code> 在后</strong>​。这意味着如果一个命令（比如 <code>python.exe</code>）在用户 Path 目录和系统 Path 目录中都存在，系统会优先执行用户 Path 中的那一个。</li>
+<li><strong>结论：</strong> 你的 <code>echo %Path%</code> 显示的是 ​<strong>用户 <code>Path</code> 和 系统 <code>Path</code> 合并后的结果</strong>​。</li>
+</ul>
+</li>
+</ul>
+<h3 id="utool工作原理"><a href="#utool工作原理" class="headerlink" title="utool工作原理"></a>utool工作原理</h3><ul>
+<li>当你开机并登录 Windows 后，uTools 作为你的一个启动项或者你手动开启的程序，它会 ​<strong>在启动时加载一次当时的环境变量</strong>​。</li>
+<li>之后，uTools 会一直作为一个后台进程运行，以便你随时可以呼出它。</li>
+<li>通过呼出 uTools，输入 <code>cmd</code> 并回车。子进程默认会 ​<strong>继承父进程的环境变量</strong>​。因为 uTools 这个父进程是在你修改环境变量 <strong>之前</strong> 就启动的，它内存里保存的是一套 <strong>旧的、不包含 Maven 路径</strong> 的环境变量。</li>
+<li>所以，它启动的 CMD 自然也继承了这套旧的环境变量。在那个 CMD 窗口里，<code>Path</code> 里面自然就没有 Maven。</li>
+<li>每次修改完环境变量后，<strong>彻底退出 uTools（在系统托盘右键退出）</strong></li>
+<li>为什么powershell可以，但是cmd命令行不行，因为cmd是通过utool启动，启动之后通过添加的powershell，powershell不受utool影响</li>
+</ul>
+
+        </div>
+
+        <!-- 文章底部 -->
+        <footer class="article-footer">
+            <div class="article-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-heart"></i> 点赞 (0)
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-share"></i> 分享
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-bookmark"></i> 收藏
+                </button>
+            </div>
+            
+            <!-- 文章导航 -->
+            <div class="article-navigation">
+                
+                
+                    <a href="../../../../2025/10/22/git%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="nav-next">
+                        <span>下一篇：git使用与文件上传</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                
+            </div>
+        </footer>
+    </div>
+</article>
+
+
+    </main>
+    
+    <!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 技术分享. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    
+    
+<script src="../../../../js/main.js"></script>
+
+
+</body>
+</html>
+
